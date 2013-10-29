@@ -19,7 +19,6 @@ sh ./setup_serf.sh
 ``` sh
 export SERF_ROLE=web
 export LB_IP="xxx.xxx.xxx.xxx"
-sh ./setup_load_balancer.sh
 sh ./setup_serf.sh
 ```
 
