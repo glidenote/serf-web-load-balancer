@@ -14,6 +14,18 @@ sh ./setup_load_balancer.sh
 sh ./setup_serf.sh
 ```
 
+stop agent command.
+
+``` sh
+stop serf
+```
+
+start agent command.
+
+``` sh
+start serf
+```
+
 ### Web Node
 
 ``` sh
@@ -55,11 +67,26 @@ listen http-in
     server web002.foo.com 192.168.xxx.xxx check
 ```
 
+stop agent and leave command.
+
+``` sh
+sudo stop serf-join
+sudo stop serf
+```
+
+start agent and join command.
+
+``` sh
+sudo start serf
+sudo start serf-join
+```
+
 ## Web Node Leaves
 
 stop `web`. Then `member-leave` event is propagated to `lb` and the handler script is fired.
 
 ``` sh
+sudo stop serf-join
 sudo stop serf
 ```
 
