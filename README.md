@@ -70,7 +70,6 @@ listen http-in
 stop agent and leave command.
 
 ``` sh
-sudo stop serf-join
 sudo stop serf
 ```
 
@@ -92,7 +91,6 @@ serf members
 stop `web`. Then `member-leave` event is propagated to `lb` and the handler script is fired.
 
 ``` sh
-sudo stop serf-join
 sudo stop serf
 ```
 
