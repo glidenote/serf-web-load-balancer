@@ -38,7 +38,7 @@ As a result,
 
  1. `web` is now also a member of cluster.
  2. `member-join` event is occurred. 
- 3. `web` is added into `/etc/haproxy/haproxy.cfg`
+ 3. `web` is added into `/etc/haproxy/haproxy.cfg` on `lb` node.
 
 ``` sh
 [root@lb001 ~]# cat /etc/haproxy/haproxy.cfg
@@ -81,6 +81,12 @@ sudo start serf
 sudo start serf-join
 ```
 
+see the members of the Serf cluster
+
+``` sh
+serf members
+```
+
 ## Web Node Leaves
 
 stop `web`. Then `member-leave` event is propagated to `lb` and the handler script is fired.
@@ -90,11 +96,17 @@ sudo stop serf-join
 sudo stop serf
 ```
 
+see the members of the Serf cluster
+
+``` sh
+serf members
+```
+
 As a result,
 
  1. `web` is now not a member of cluster.
  2. `member-leave` event is occurred. 
- 3. `web` is removed from `/etc/haproxy/haproxy.cfg`
+ 3. `web` is removed from `/etc/haproxy/haproxy.cfg` on `lb` node.
 
 ## Distro Support
 
