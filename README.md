@@ -8,6 +8,8 @@ refs https://github.com/kentaro/serf-hosts
 
 ### Load Balancer Node
 
+install command.
+
 ``` sh
 export SERF_ROLE=lb
 sh ./setup_load_balancer.sh
@@ -27,6 +29,10 @@ start serf
 ```
 
 ### Web Node
+
+require apache or nginx.
+
+install command.
 
 ``` sh
 export SERF_ROLE=web
